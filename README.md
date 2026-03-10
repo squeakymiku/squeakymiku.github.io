@@ -1,1 +1,1 @@
-# squeakymiku.github.io.github.io
+# squeakymiku.github.io
