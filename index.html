@@ -8,38 +8,62 @@
 <style>
 
 body {
-  background-color: #000000
-;
+  background-color: #000000;
   color: white;
   font-family: 'Orbitron', sans-serif;
   text-align: center;
   margin: 0;
   padding: 40px;
+  position: relative; /* for positioning the corner info */
 }
 
 h1 {
   font-size: 50px;
   text-shadow: 
-  0 0 5px white,
-  0 0 10px white,
-  0 0 20px white;
+    0 0 5px white,
+    0 0 10px white,
+    0 0 20px white;
 }
 
 h2 {
   margin-top: 30px;
   text-shadow:
-  0 0 5px white,
-  0 0 10px white;
+    0 0 5px white,
+    0 0 10px white;
 }
 
 p, li {
   font-size: 18px;
   text-shadow:
-  0 0 5px white;
+    0 0 5px white;
 }
 
 ul {
   list-style-position: inside;
+}
+
+/* Corner info (name + GitHub avatar) */
+.corner-info {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: right;
+}
+
+.corner-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 5px auto;
+  border: 2px solid white;
+}
+
+.corner-info span {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
 }
 
 </style>
@@ -48,21 +72,33 @@ ul {
 
 <body>
 
+<div class="corner-info">
+  <img src="https://github.com/squeakymiku.png" alt="GitHub Avatar">
+  <span>Nohla</span>
+</div>
+
 <h1>Welcome to My Website</h1>
 
 <p>Hi! I'm a high school student interested in IT, networking, and cybersecurity.</p>
 
 <h2>My Goals</h2>
-
-<p>I plan to study Information Technology in college and work in IT support, networking, or cloud operations.</p>
+<p>I plan to study Information Technology in college.</p>
 
 <h2>Things I'm Learning</h2>
-
 <ul>
-<li>Windows troubleshooting</li>
-<li>Linux basics</li>
-<li>Networking fundamentals</li>
-<li>Cybersecurity concepts</li>
+  <li>Windows troubleshooting</li>
+  <li>Linux basics</li>
+  <li>Networking fundamentals</li>
+  <li>Cybersecurity concepts</li>
+</ul>
+
+<h2>My Interests</h2>
+<ul>
+  <li>Gaming</li>
+  <li>Tech Products & YouTube channels</li>
+  <li>Building custom PCs</li>
+  <li>little bit of coding:P</li>
+  <li>anime & indie animation</li>
 </ul>
 
 </body>
