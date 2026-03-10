@@ -46,13 +46,13 @@ ul {
 .corner-info {
   position: absolute;
   top: 20px;
-  right: 20px;
-  text-align: right;
+  left: 20px; /* moved to top-left */
+  text-align: center;
 }
 
 .corner-info img {
-  width: 50px;
-  height: 50px;
+  width: 40px;  /* smaller avatar */
+  height: 40px;
   border-radius: 50%;
   display: block;
   margin: 0 auto 5px auto;
@@ -61,7 +61,7 @@ ul {
 
 .corner-info span {
   display: block;
-  font-size: 14px;
+  font-size: 12px; /* smaller name text */
   font-weight: bold;
   color: #fff;
 }
@@ -72,7 +72,8 @@ ul {
 
 <body>
 
-<div class="Corner info on the right">
+<!-- Fixed corner avatar -->
+<div class="corner-info">
   <img src="https://github.com/squeakymiku.png" alt="GitHub Avatar">
   <span>Nohla</span>
 </div>
@@ -101,3 +102,5 @@ ul {
   <li>anime & indie animation</li>
 </ul>
 
+</body>
+</html>
