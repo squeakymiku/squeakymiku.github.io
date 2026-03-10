@@ -72,7 +72,7 @@ ul {
 
 <body>
 
-<div class="corner-info">
+<div class="Corner info on the top-left">
   <img src="https://github.com/squeakymiku.png" alt="GitHub Avatar">
   <span>Nohla</span>
 </div>
@@ -103,3 +103,31 @@ ul {
 
 </body>
 </html>
+<!-- Stamps section at the bottom -->
+<div class="stamps">
+  <img src="/mnt/data/54764178-c798-483d-aa0d-42e5e66c072a.gif" alt="Stamp 1">
+  <img src="/mnt/data/7a9f60dd-39bb-4f1e-b449-8160791521dd.png" alt="Stamp 2">
+</div>
+
+<style>
+.stamps {
+  margin-top: 50px;
+  display: flex; /* arrange in a row */
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stamps img {
+  width: 80px; /* adjust size */
+  height: 80px;
+  border: 2px solid white;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stamps img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px white; /* neon glow on hover */
+}
+</style>
