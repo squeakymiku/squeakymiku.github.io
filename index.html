@@ -14,7 +14,7 @@ body {
   text-align: center;
   margin: 0;
   padding: 40px;
-  position: relative; /* for positioning the corner info */
+  position: relative;
 }
 
 h1 {
@@ -42,16 +42,29 @@ ul {
   list-style-position: inside;
 }
 
+/* stamp layout */
+.stamps {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.stamps img {
+  width: 99px;
+}
+
 /* Corner info (name + GitHub avatar) */
 .corner-info {
   position: absolute;
   top: 20px;
-  left: 20px; /* moved to top-left */
+  left: 20px;
   text-align: center;
 }
 
 .corner-info img {
-  width: 40px;  /* smaller avatar */
+  width: 40px;
   height: 40px;
   border-radius: 50%;
   display: block;
@@ -61,7 +74,7 @@ ul {
 
 .corner-info span {
   display: block;
-  font-size: 12px; /* smaller name text */
+  font-size: 12px;
   font-weight: bold;
   color: #fff;
 }
@@ -75,7 +88,7 @@ ul {
 <!-- Fixed corner avatar -->
 <div class="corner-info">
   <img src="https://github.com/squeakymiku.png" alt="GitHub Avatar">
-  <span>Nohla ᗜˬᗜ </span>
+  <span>Nohla ᗜˬᗜ</span>
 </div>
 
 <h1>Welcome to My Website</h1>
@@ -98,9 +111,21 @@ ul {
   <li>Gaming</li>
   <li>Tech Products & YouTube channels</li>
   <li>Building custom PCs</li>
-  <li>little bit of coding:P</li>
+  <li>coding a lil:p</li>
   <li>anime & indie animation</li>
 </ul>
+
+<h2>My Stamps</h2>
+
+<div class="stamps">
+<img src="bird aaaaa.png">
+<img src="bunny8.png">
+<img src="igotaleek.gif">
+<img src="cookierundance.gif">
+<img src="k18.gif">
+<img src="e86.png">
+<img src="a7.gif">
+</div>
 
 </body>
 </html>
