@@ -14,7 +14,9 @@ body {
   text-align: center;
   margin: 0;
   padding: 40px;
-  position: relative;
+  /* Adds space so text stays in the middle of the sidebars */
+  padding-left: 130px; 
+  padding-right: 130px;
 }
 
 h1 {
@@ -42,25 +44,44 @@ ul {
   list-style-position: inside;
 }
 
-/* stamp layout */
-.stamps {
+/* NEW STAMP SIDEBAR LAYOUT */
+.stamp-sidebar {
+  position: fixed;
+  top: 80px;
+  bottom: 20px; /* Keeps them from hitting the bottom */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 10px;
+  z-index: 100;
+  overflow-y: auto; /* Allows scrolling if you add even more stamps! */
+  scrollbar-width: none; /* Hides scrollbar for clean look */
 }
 
-.stamps img {
-  width: 99px;
+.stamp-sidebar::-webkit-scrollbar {
+  display: none; /* Hides scrollbar for Chrome/Safari */
+}
+
+.left-side { left: 15px; }
+.right-side { right: 15px; }
+
+.stamp-sidebar img {
+  width: 88px; /* Slightly smaller to fit sidebars better */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s;
+}
+
+.stamp-sidebar img:hover {
+  transform: scale(1.1);
+  border-color: white;
 }
 
 /* Corner info (name + GitHub avatar) */
 .corner-info {
-  position: absolute;
+  position: fixed; /* Keep it pinned to top left */
   top: 20px;
   left: 20px;
   text-align: center;
+  z-index: 110;
 }
 
 .corner-info img {
@@ -85,10 +106,39 @@ ul {
 
 <body>
 
-<!-- Fixed corner avatar -->
 <div class="corner-info">
   <img src="https://github.com/squeakymiku.png" alt="GitHub Avatar">
   <span>Nohla ᗜˬᗜ</span>
+</div>
+
+<div class="stamp-sidebar left-side">
+  <img src="a50.gif">
+  <img src="a7.gif">
+  <img src="brat.png">
+  <img src="bunny6.gif">
+  <img src="bunny8.png">
+  <img src="cookierundance.gif">
+  <img src="d5.jpg">
+  <img src="djw6trw-58d8a3b2-7cbf-47b0-8f7a-1e6ef20ff9ab.png">
+  <img src="e86.png">
+  <img src="igotaleek.gif">
+  <img src="k18.gif">
+</div>
+
+<div class="stamp-sidebar right-side">
+  <img src="meanPeople.jpg">
+  <img src="mikuMesmer.gif">
+  <img src="mikustamp.png">
+  <img src="nutella.gif">
+  <img src="pcuser.webp">
+  <img src="soda.gif">
+  <img src="tetoMesmer.gif">
+  <img src="tumblr_0060da4b4fbedbd687338919a14954a5_34324805_100.webp">
+  <img src="tumblr_34c2170f55083192156a27940f3c4cac_b2d44bf6_100.png">
+  <img src="tumblr_4b02e5236e78e001d72a3175b5027934_d76773e6_100.gif">
+  <img src="tumblr_7b82c4b656ad3e3093ab0aa161f69315_8eb4f7ea_100.png">
+  <img src="tumblr_eb6ec57e857ed6246cd07622d56eafd6_948c2d7d_100.webp">
+  <img src="tumblr_fe22e855c1b0a9a6b1ee09b56481668e_40134304_250.webp">
 </div>
 
 <h1>Welcome to My Website</h1>
@@ -114,16 +164,6 @@ ul {
   <li>coding a lil:p</li>
   <li>anime & indie animation</li>
 </ul>
-
-<div class="stamps">
-  <img src="bird_aaaaa.png"">
-  <img src="bunny8.png">
-  <img src="igotaleek.gif">
-  <img src="cookierundance.gif">
-  <img src="k18.gif">
-  <img src="e86.png">
-  <img src="a7.gif">
-</div>
 
 </body>
 </html>
