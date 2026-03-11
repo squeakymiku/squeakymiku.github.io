@@ -2,121 +2,209 @@
 <html>
 <head>
 <title>My IT Portfolio</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-  body {
-    background-color: #000000;
-    color: white;
-    font-family: 'Orbitron', sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 150px 150px 50px 150px; /* Big padding to keep content in the middle */
-  }
 
-  /* Main content container */
-  .main-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
+body {
+  background-color: #000000;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 40px;
+  /* Space for sidebars and top/bottom bars */
+  padding-left: 130px; 
+  padding-right: 130px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
 
-  h1 { font-size: 50px; text-shadow: 0 0 10px white; }
-  h2 { margin-top: 30px; text-shadow: 0 0 5px white; }
-  p, li { font-size: 18px; }
-  ul { list-style-position: inside; display: inline-block; text-align: left; }
+h1 {
+  font-size: 50px;
+  text-shadow: 
+    0 0 5px white,
+    0 0 10px white,
+    0 0 20px white;
+}
 
-  /* Corner Info - Pinned Top Left */
-  .corner-info {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 200;
-  }
-  .corner-info img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; }
-  .corner-info span { display: block; font-size: 10px; }
+h2 {
+  margin-top: 30px;
+  text-shadow:
+    0 0 5px white,
+    0 0 10px white;
+}
 
-  /* Top Row - Pinned Top */
-  .top-stamp-row {
-    position: fixed;
-    top: 10px;
-    left: 100px; /* Start right of the avatar */
-    right: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    z-index: 150;
-  }
+p, li {
+  font-size: 18px;
+  text-shadow:
+    0 0 5px white;
+}
 
-  /* Sidebars - Pinned Sides */
-  .stamp-sidebar {
-    position: fixed;
-    top: 100px;
-    bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 100;
-    overflow-y: auto;
-    scrollbar-width: none;
-  }
-  .left-side { left: 10px; }
-  .right-side { right: 10px; }
+ul {
+  list-style-position: inside;
+}
 
-  /* General Stamp Styling */
-  img {
-    width: 75px;
-    height: auto;
-    border: 1px solid white;
-    transition: transform 0.2s;
-  }
-  img:hover { transform: scale(1.1); z-index: 300; }
+/* SIDEBARS (Left & Right) */
+.stamp-sidebar {
+  position: fixed;
+  top: 130px; /* Start lower to clear the top bar and avatar */
+  bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.stamp-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.left-side { left: 15px; }
+.right-side { right: 15px; }
+
+/* HORIZONTAL ROWS (Top & Bottom) */
+.stamp-row {
+  position: fixed;
+  left: 150px; /* Keep away from sidebars */
+  right: 150px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  z-index: 100;
+}
+
+.top-bar { 
+  top: 20px; 
+  margin-left: 100px; /* Pushes stamps to the right so they don't block your name */
+}
+
+.bottom-bar { 
+  bottom: 20px; 
+}
+
+/* Common image styling for all stamps */
+.stamp-sidebar img, .stamp-row img {
+  width: 88px;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s;
+}
+
+.stamp-sidebar img:hover, .stamp-row img:hover {
+  transform: scale(1.1);
+  border-color: white;
+  z-index: 110;
+}
+
+/* Corner info (name + GitHub avatar) */
+.corner-info {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  text-align: center;
+  z-index: 110;
+}
+
+.corner-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 5px auto;
+  border: 2px solid white;
+}
+
+.corner-info span {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
 
 </style>
+
 </head>
+
 <body>
 
-  <div class="corner-info">
-    <img src="https://github.com/squeakymiku.png" alt="Avatar">
-    <span>Nohla ᗜˬᗜ</span>
-  </div>
+<div class="corner-info">
+  <img src="https://github.com/squeakymiku.png" alt="GitHub Avatar">
+  <span>Nohla ᗜˬᗜ</span>
+</div>
 
-  <div class="top-stamp-row">
-    <img src="nutella.gif">
-    <img src="soda.gif">
-    <img src="mikuMesmer.gif">
-    <img src="tetoMesmer.gif">
-  </div>
+<div class="stamp-row top-bar">
+  <img src="nutella.gif">
+  <img src="soda.gif">
+  <img src="mikuMesmer.gif">
+  <img src="tetoMesmer.gif">
+  <img src="tumblr_eb6ec57e857ed6246cd07622d56eafd6_948c2d7d_100.webp">
+  <img src="tumblr_fe22e855c1b0a9a6b1ee09b56481668e_40134304_250.webp">
+   <img src="bunny8.png">
+</div>
+</div>
 
-  <div class="stamp-sidebar left-side">
-    <img src="a50.gif">
-    <img src="a7.gif">
-    <img src="brat.png">
-    <img src="bunny6.gif">
-    <img src="bunny8.png">
-    <img src="cookierundance.gif">
-    <img src="d5.jpg">
-  </div>
+<div class="stamp-sidebar left-side">
+  <img src="a50.gif">
+  <img src="a7.gif">
+  <img src="brat.png">
+  <img src="bunny6.gif">
+  <img src="cookierundance.gif">
+  <img src="d5.jpg">
+  <img src="djw6trw-58d8a3b2-7cbf-47b0-8f7a-1e6ef20ff9ab.png">
+  <img src="e86.png">
+  <img src="igotaleek.gif">
+  <img src="k18.gif">
+</div>
 
-  <div class="stamp-sidebar right-side">
-    <img src="meanPeople.jpg">
-    <img src="mikustamp.png">
-    <img src="pcuser.webp">
-    <img src="tumblr_4b02e5236e78e001d72a3175b5027934_d76773e6_100.gif">
-    <img src="tumblr_7b82c4b656ad3e3093ab0aa161f69315_8eb4f7ea_100.png">
-  </div>
+<div class="stamp-sidebar right-side">
+  <img src="meanPeople.jpg">
+  <img src="mikuMesmer.gif">
+  <img src="mikustamp.png">
+  <img src="nutella.gif">
+  <img src="pcuser.webp">
+  <img src="soda.gif">
+  <img src="tetoMesmer.gif">
+  <img src="tumblr_0060da4b4fbedbd687338919a14954a5_34324805_100.webp">
+  <img src="tumblr_34c2170f55083192156a27940f3c4cac_b2d44bf6_100.png">
+  <img src="tumblr_4b02e5236e78e001d72a3175b5027934_d76773e6_100.gif">
+  <img src="tumblr_7b82c4b656ad3e3093ab0aa161f69315_8eb4f7ea_100.png">
+  
+</div>
 
-  <div class="main-content">
-    <h1>Welcome to My Website</h1>
-    <p>Hi! I'm a high school student interested in IT, networking, and cybersecurity.</p>
-    <h2>My Goals</h2>
-    <p>I plan to study Information Technology in college.</p>
-    <h2>Things I'm Learning</h2>
-    <ul>
-      <li>Windows troubleshooting</li>
-      <li>Linux basics</li>
-      <li>Networking fundamentals</li>
-      <li>Cybersecurity concepts</li>
-    </ul>
-  </div>
+<div class="stamp-row bottom-bar">
+  <img src="pcuser.webp">
+  <img src="mikustamp.png">
+  <img src="a50.gif">
+  <img src="a7.gif">
+</div>
+
+<h1>Welcome to My Website</h1>
+
+<p>Hi! I'm a high school student interested in IT, networking, and cybersecurity.</p>
+
+<h2>My Goals</h2>
+<p>I plan to study Information Technology in college.</p>
+
+<h2>Things I'm Learning</h2>
+<ul>
+  <li>Windows troubleshooting</li>
+  <li>Linux basics</li>
+  <li>Networking fundamentals</li>
+  <li>Cybersecurity concepts</li>
+</ul>
+
+<h2>My Interests</h2>
+<ul>
+  <li>Gaming</li>
+  <li>Tech Products & YouTube channels</li>
+  <li>Building custom PCs</li>
+  <li>coding a lil:p</li>
+  <li>anime & indie animation</li>
+</ul>
 
 </body>
 </html>
