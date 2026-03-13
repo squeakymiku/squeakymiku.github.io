@@ -45,7 +45,7 @@
       justify-content: center; align-items: center; z-index: 2000;
     }
     .bio-container {
-      width: 90%; max-width: 800px; height: 500px; /* Set height so it's a good canvas */
+      width: 90%; max-width: 800px; height: 500px;
       background: #0a0a0a;
       border: 2px solid #00ffcc; box-shadow: 0 0 20px #00ffcc;
       padding: 20px; position: relative;
@@ -56,6 +56,33 @@
       font-family: 'Orbitron'; cursor: pointer; font-size: 16px;
     }
 
+    /* Grid Layout */
+    .bio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      height: 100%;
+      overflow-y: auto;
+      padding-top: 20px;
+    }
+    .bio-card {
+      border: 1px solid #00ffcc;
+      box-shadow: 0 0 8px #00ffcc;
+      padding: 10px;
+      text-align: left;
+      transition: all 0.3s ease;
+      color: #fff;
+    }
+    .bio-card:hover {
+      background: rgba(0, 255, 204, 0.1);
+      box-shadow: 0 0 20px #00ffcc;
+    }
+    .bio-card h3 {
+      margin: 0 0 5px 0; color: #00ffcc; font-size: 14px;
+      text-shadow: 0 0 5px #00ffcc;
+    }
+    .bio-card ul { font-size: 12px; margin: 0; padding-left: 20px; }
+
     /* Stamp/Layout Styles */
     .top-bar { top: 10px; left: 130px; right: 20px; display: flex; justify-content: center; gap: 10px; }
     .bottom-bar { bottom: 10px; left: 130px; right: 20px; display: flex; justify-content: center; gap: 10px; }
@@ -65,7 +92,6 @@
     img { width: 80px; height: auto; border: 1px solid white; transition: 0.2s; }
     img:hover { transform: scale(1.1); }
     h1 { font-size: 50px; text-shadow: 0 0 10px white; }
-    ul { list-style-position: inside; display: inline-block; text-align: left; }
   </style>
 </head>
 
@@ -75,48 +101,21 @@
     <span>Nohla ᗜˬᗜ</span>
   </div>
 
-  <div class="stamp-row top-bar">
-    <img src="nutella.gif"><img src="soda.gif"><img src="mikuMesmer.gif">
-    <img src="tetoMesmer.gif"><img src="tumblr_eb6ec57e857ed6246cd07622d56eafd6_948c2d7d_100.webp">
-    <img src="tumblr_fe22e855c1b0a9a6b1ee09b56481668e_40134304_250.webp"><img src="bunny8.png">
-  </div>
-
-  <div class="stamp-sidebar left-side">
-    <img src="a50.gif"><img src="a7.gif"><img src="bunny6.gif">
-    <img src="cookierundance.gif"><img src="d5.jpg"><img src="e86.png">
-    <img src="igotaleek.gif">
-  </div>
-
-  <div class="stamp-sidebar right-side">
-    <img src="meanPeople.jpg"><img src="mikustamp.png"><img src="nutella.gif">
-    <img src="pcuser.webp"><img src="tumblr_0060da4b4fbedbd687338919a14954a5_34324805_100.webp">
-    <img src="tumblr_34c2170f55083192156a27940f3c4cac_b2d44bf6_100.png">
-    <img src="tumblr_7b82c4b656ad3e3093ab0aa161f69315_8eb4f7ea_100.png">
-  </div>
-
-  <div class="stamp-row bottom-bar">
-    <img src="pcuser.webp"><img src="mikustamp.png"><img src="brat.png">
-    <img src="a7.gif"><img src="tumblr_4b02e5236e78e001d72a3175b5027934_d76773e6_100.gif">
-    <img src="djw6trw-58d8a3b2-7cbf-47b0-8f7a-1e6ef20ff9ab.png"><img src="k18.gif">
-  </div>
-
   <h1>Welcome to My Website</h1>
   <button class="bio-button" onclick="toggleBio()">ABOUT ME</button>
-  <p>Hi! I'm a high school student interested in IT, networking, and cybersecurity.</p>
-  <h2>My Goals</h2>
-  <p>I plan to study Information Technology in college.</p>
-  <h2>Things I'm Learning</h2>
-  <ul>
-    <li>Windows troubleshooting</li>
-    <li>Linux basics</li>
-    <li>Networking fundamentals</li>
-    <li>Cybersecurity concepts</li>
-  </ul>
-
+  
   <div id="myBio" class="bio-overlay">
     <div class="bio-container">
       <button class="close-btn" onclick="toggleBio()">[ X ]</button>
+      <div class="bio-grid">
+        <div class="bio-card"><h3>Github PFP</h3><p>Content goes here</p></div>
+        <div class="bio-card"><h3>Games I'm Playing</h3><p>Games go here</p></div>
+        <div class="bio-card"><h3>Summary</h3><p>Likes/Dislikes</p></div>
+        <div class="bio-card"><h3>Animes I Watch</h3><p>Anime list</p></div>
+        <div class="bio-card"><h3>Life</h3><p>School and fitness</p></div>
+        <div class="bio-card"><h3>Stamps</h3><p>Gallery placeholder</p></div>
       </div>
+    </div>
   </div>
 
   <script>
