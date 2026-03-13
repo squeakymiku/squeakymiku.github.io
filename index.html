@@ -7,65 +7,42 @@
   
   <style>
     html { overflow-y: scroll; }
-    body {
-      background-color: #000000;
-      color: white;
-      font-family: 'Orbitron', sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 150px 150px 150px 150px;
+    body { background-color: #000000; color: white; font-family: 'Orbitron', sans-serif; text-align: center; margin: 0; padding: 150px 150px 150px 150px; }
+
+    /* Animations */
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
     }
+    .floating-stamp { animation: float 4s ease-in-out infinite; display: inline-block; cursor: pointer; }
 
     /* Fixed Containers */
     .corner-info, .stamp-sidebar, .stamp-row { position: fixed; z-index: 100; }
     .corner-info { top: 20px; left: 20px; text-align: center; }
     .corner-info img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; display: block; margin: 0 auto 5px; }
-    .corner-info span { font-size: 12px; font-weight: bold; }
 
     /* Button Style */
-    .bio-button {
-      display: inline-block;
-      margin: 10px 0 20px 0;
-      background: transparent;
-      color: #00ffcc;
-      border: 1px solid #00ffcc;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 14px;
-      padding: 8px 16px;
-      cursor: pointer;
-      transition: all 0.3s;
-      text-shadow: 0 0 5px #00ffcc;
-    }
-    .bio-button:hover { background: #00ffcc; color: black; box-shadow: 0 0 15px #00ffcc; }
+    .bio-button { display: inline-block; margin: 10px 0 20px 0; background: transparent; color: #00ffcc; border: 1px solid #00ffcc; font-family: 'Orbitron', sans-serif; padding: 8px 16px; cursor: pointer; }
+    .bio-button:hover { background: #00ffcc; color: black; }
 
-    /* Bio Overlay (Cyber-Goth Style) */
-    .bio-overlay {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.95); display: none;
-      justify-content: center; align-items: center; z-index: 2000;
+    /* Bio Dashboard Overlay */
+    .bio-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); display: none; justify-content: center; align-items: center; z-index: 2000; }
+    .bio-container { 
+      width: 90%; max-width: 900px; height: 75vh; background: #0a0a0a; border: 2px solid #00ffcc; 
+      padding: 20px; position: relative; display: grid; grid-template-columns: 250px 1fr; gap: 20px; text-align: left; overflow-y: auto;
     }
-    .bio-container {
-      width: 90%; max-width: 800px; height: 500px; /* Set height so it's a good canvas */
-      background: #0a0a0a;
-      border: 2px solid #00ffcc; box-shadow: 0 0 20px #00ffcc;
-      padding: 20px; position: relative;
-    }
-    .close-btn { 
-      position: absolute; top: 10px; right: 10px; 
-      background: none; border: none; color: #ff0055; 
-      font-family: 'Orbitron'; cursor: pointer; font-size: 16px;
-    }
+    .box { border: 1px solid #333; padding: 15px; margin-bottom: 10px; color: #ccc; }
+    .close-btn { position: absolute; top: 10px; right: 10px; background: none; border: none; color: #ff0055; cursor: pointer; font-family: 'Orbitron'; }
 
-    /* Stamp/Layout Styles */
+    /* Existing Stamp Styles */
     .top-bar { top: 10px; left: 130px; right: 20px; display: flex; justify-content: center; gap: 10px; }
     .bottom-bar { bottom: 10px; left: 130px; right: 20px; display: flex; justify-content: center; gap: 10px; }
     .stamp-sidebar { top: 120px; bottom: 120px; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; scrollbar-width: none; }
     .left-side { left: 15px; }
     .right-side { right: 15px; }
-    img { width: 80px; height: auto; border: 1px solid white; transition: 0.2s; }
+    img { width: 80px; height: auto; border: 1px solid white; }
     img:hover { transform: scale(1.1); }
-    h1 { font-size: 50px; text-shadow: 0 0 10px white; }
-    ul { list-style-position: inside; display: inline-block; text-align: left; }
   </style>
 </head>
 
@@ -75,48 +52,28 @@
     <span>Nohla ᗜˬᗜ</span>
   </div>
 
-  <div class="stamp-row top-bar">
-    <img src="nutella.gif"><img src="soda.gif"><img src="mikuMesmer.gif">
-    <img src="tetoMesmer.gif"><img src="tumblr_eb6ec57e857ed6246cd07622d56eafd6_948c2d7d_100.webp">
-    <img src="tumblr_fe22e855c1b0a9a6b1ee09b56481668e_40134304_250.webp"><img src="bunny8.png">
-  </div>
-
-  <div class="stamp-sidebar left-side">
-    <img src="a50.gif"><img src="a7.gif"><img src="bunny6.gif">
-    <img src="cookierundance.gif"><img src="d5.jpg"><img src="e86.png">
-    <img src="igotaleek.gif">
-  </div>
-
-  <div class="stamp-sidebar right-side">
-    <img src="meanPeople.jpg"><img src="mikustamp.png"><img src="nutella.gif">
-    <img src="pcuser.webp"><img src="tumblr_0060da4b4fbedbd687338919a14954a5_34324805_100.webp">
-    <img src="tumblr_34c2170f55083192156a27940f3c4cac_b2d44bf6_100.png">
-    <img src="tumblr_7b82c4b656ad3e3093ab0aa161f69315_8eb4f7ea_100.png">
-  </div>
-
-  <div class="stamp-row bottom-bar">
-    <img src="pcuser.webp"><img src="mikustamp.png"><img src="brat.png">
-    <img src="a7.gif"><img src="tumblr_4b02e5236e78e001d72a3175b5027934_d76773e6_100.gif">
-    <img src="djw6trw-58d8a3b2-7cbf-47b0-8f7a-1e6ef20ff9ab.png"><img src="k18.gif">
-  </div>
-
   <h1>Welcome to My Website</h1>
   <button class="bio-button" onclick="toggleBio()">ABOUT ME</button>
   <p>Hi! I'm a high school student interested in IT, networking, and cybersecurity.</p>
-  <h2>My Goals</h2>
-  <p>I plan to study Information Technology in college.</p>
-  <h2>Things I'm Learning</h2>
-  <ul>
-    <li>Windows troubleshooting</li>
-    <li>Linux basics</li>
-    <li>Networking fundamentals</li>
-    <li>Cybersecurity concepts</li>
-  </ul>
 
   <div id="myBio" class="bio-overlay">
     <div class="bio-container">
       <button class="close-btn" onclick="toggleBio()">[ X ]</button>
+      
+      <div class="left-col">
+        <div class="box"><img src="https://github.com/squeakymiku.png" style="width:100%"></div>
+        <div class="box"><h3>Summary</h3><p>Talk about school, workouts, and life here!</p></div>
       </div>
+      
+      <div class="right-col">
+        <div class="box"><h3>Games I'm Playing</h3><p>List your games...</p></div>
+        <div class="box"><h3>Animes I Watch</h3><p>Current watchlist...</p></div>
+        <div class="box"><h3>Stamps</h3>
+           <img src="mikustamp.png" class="floating-stamp" style="animation-delay: 0s;">
+           <img src="brat.png" class="floating-stamp" style="animation-delay: 1s;">
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
