@@ -18,46 +18,36 @@
 
     /* Fixed Containers */
     .corner-info, .stamp-sidebar, .stamp-row { position: fixed; z-index: 100; }
-
     .corner-info { top: 20px; left: 20px; text-align: center; }
     .corner-info img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; display: block; margin: 0 auto 5px; }
     .corner-info span { font-size: 12px; font-weight: bold; }
 
-    /* New About Me Button Style */
+    /* Button Style */
     .bio-button {
-      display: block;
-      margin: 10px auto 0 auto;
+      display: inline-block;
+      margin: 10px 0 20px 0;
       background: transparent;
-      color: #00ffcc; 
+      color: #00ffcc;
       border: 1px solid #00ffcc;
       font-family: 'Orbitron', sans-serif;
-      font-size: 10px;
-      padding: 5px 10px;
+      font-size: 14px;
+      padding: 8px 16px;
       cursor: pointer;
       transition: all 0.3s;
       text-shadow: 0 0 5px #00ffcc;
     }
     .bio-button:hover { background: #00ffcc; color: black; box-shadow: 0 0 15px #00ffcc; }
 
-    /* Bio Overlay Styles (Cyber-Goth) */
+    /* Bio Overlay (Cyber-Goth Style) */
     .bio-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      display: none; /* Hidden until clicked */
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.95); display: none;
+      justify-content: center; align-items: center; z-index: 2000;
     }
     .bio-container {
-      width: 90%;
-      max-width: 800px;
-      background: #0a0a0a;
-      border: 2px solid #00ffcc;
-      box-shadow: 0 0 20px #00ffcc;
-      padding: 20px;
-      position: relative;
+      width: 90%; max-width: 800px; background: #0a0a0a;
+      border: 2px solid #00ffcc; box-shadow: 0 0 20px #00ffcc;
+      padding: 20px; position: relative;
     }
     .bio-layout { display: flex; gap: 20px; text-align: left; }
     .bio-sidebar { flex: 1; background: #111; border: 1px solid #333; padding: 15px; text-align: center; }
@@ -67,14 +57,14 @@
     .box-header { background: #00ffcc; color: #000; font-size: 14px; padding: 5px; margin: 15px 0 5px 0; }
     .close-btn { position: absolute; top: 10px; right: 10px; background: none; border: none; color: #ff0055; font-family: 'Orbitron'; cursor: pointer; }
 
-    /* Original Stamp/Layout Styles */
+    /* Stamp/Layout Styles */
     .top-bar { top: 10px; left: 130px; right: 20px; display: flex; justify-content: center; gap: 10px; }
     .bottom-bar { bottom: 10px; left: 130px; right: 20px; display: flex; justify-content: center; gap: 10px; }
     .stamp-sidebar { top: 120px; bottom: 120px; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; scrollbar-width: none; }
     .left-side { left: 15px; }
     .right-side { right: 15px; }
-    .stamp-row img, .stamp-sidebar img { width: 80px; height: auto; border: 1px solid white; transition: 0.2s; }
-    .stamp-row img:hover, .stamp-sidebar img:hover { transform: scale(1.1); }
+    img { width: 80px; height: auto; border: 1px solid white; transition: 0.2s; }
+    img:hover { transform: scale(1.1); }
     h1 { font-size: 50px; text-shadow: 0 0 10px white; }
     ul { list-style-position: inside; display: inline-block; text-align: left; }
   </style>
@@ -84,7 +74,6 @@
   <div class="corner-info">
     <img src="https://github.com/squeakymiku.png">
     <span>Nohla ᗜˬᗜ</span>
-    <button class="bio-button" onclick="toggleBio()">[ ABOUT_ME ]</button>
   </div>
 
   <div class="stamp-row top-bar">
@@ -113,6 +102,7 @@
   </div>
 
   <h1>Welcome to My Website</h1>
+  <button class="bio-button" onclick="toggleBio()">[ ABOUT_ME ]</button>
   <p>Hi! I'm a high school student interested in IT, networking, and cybersecurity.</p>
   <h2>My Goals</h2>
   <p>I plan to study Information Technology in college.</p>
@@ -131,15 +121,14 @@
         <div class="bio-sidebar">
           <div class="bio-pfp-frame"><img src="https://github.com/squeakymiku.png"></div>
           <p style="font-size: 10px; color: #00ffcc;">USER: NOHLA</p>
-          <p style="font-size: 10px;">STATUS: ONLINE</p>
         </div>
         <div class="bio-main">
           <h2 style="text-shadow: 0 0 10px #00ffcc;">Me?!</h2>
           <p>Hi again, it's me, Nohla!</p>
           <div class="box-header">What I'm Playing</div>
-          <p>I'm really into rhythm games like <strong>Maimai</strong> and <strong>Project Diva</strong>. I also play a lot of <strong>Muse Dash</strong>!</p>
-          <div class="box-header">Hobbies</div>
-          <p>When I'm not coding or gaming, I'm usually practicing <strong>Basketball</strong>, watching <strong>indie animation</strong>, or tinkering with my <strong>EndeavourOS</strong> setup.</p>
+          <p>I'm really into rhythm games like <strong>Maimai</strong> and <strong>Project Diva</strong>.</p>
+          <div class="box-header">Tech Interests</div>
+          <p>I love tinkering with <strong>EndeavourOS</strong> and learning the ropes of cybersecurity.</p>
         </div>
       </div>
     </div>
@@ -148,11 +137,7 @@
   <script>
     function toggleBio() {
       var x = document.getElementById("myBio");
-      if (x.style.display === "flex") {
-        x.style.display = "none";
-      } else {
-        x.style.display = "flex";
-      }
+      x.style.display = (x.style.display === "flex") ? "none" : "flex";
     }
   </script>
 </body>
