@@ -45,17 +45,16 @@
       justify-content: center; align-items: center; z-index: 2000;
     }
     .bio-container {
-      width: 90%; max-width: 800px; background: #0a0a0a;
+      width: 90%; max-width: 800px; height: 500px; /* Set height so it's a good canvas */
+      background: #0a0a0a;
       border: 2px solid #00ffcc; box-shadow: 0 0 20px #00ffcc;
       padding: 20px; position: relative;
     }
-    .bio-layout { display: flex; gap: 20px; text-align: left; }
-    .bio-sidebar { flex: 1; background: #111; border: 1px solid #333; padding: 15px; text-align: center; }
-    .bio-pfp-frame { border: 2px solid #00ffcc; padding: 5px; background: #000; margin-bottom: 10px; }
-    .bio-pfp-frame img { width: 100%; height: auto; filter: grayscale(100%); }
-    .bio-main { flex: 2; overflow-y: auto; max-height: 500px; }
-    .box-header { background: #00ffcc; color: #000; font-size: 14px; padding: 5px; margin: 15px 0 5px 0; }
-    .close-btn { position: absolute; top: 10px; right: 10px; background: none; border: none; color: #ff0055; font-family: 'Orbitron'; cursor: pointer; }
+    .close-btn { 
+      position: absolute; top: 10px; right: 10px; 
+      background: none; border: none; color: #ff0055; 
+      font-family: 'Orbitron'; cursor: pointer; font-size: 16px;
+    }
 
     /* Stamp/Layout Styles */
     .top-bar { top: 10px; left: 130px; right: 20px; display: flex; justify-content: center; gap: 10px; }
@@ -102,7 +101,7 @@
   </div>
 
   <h1>Welcome to My Website</h1>
-  <button class="bio-button" onclick="toggleBio()">[ ABOUT_ME ]</button>
+  <button class="bio-button" onclick="toggleBio()">ABOUT ME</button>
   <p>Hi! I'm a high school student interested in IT, networking, and cybersecurity.</p>
   <h2>My Goals</h2>
   <p>I plan to study Information Technology in college.</p>
@@ -117,21 +116,7 @@
   <div id="myBio" class="bio-overlay">
     <div class="bio-container">
       <button class="close-btn" onclick="toggleBio()">[ X ]</button>
-      <div class="bio-layout">
-        <div class="bio-sidebar">
-          <div class="bio-pfp-frame"><img src="https://github.com/squeakymiku.png"></div>
-          <p style="font-size: 10px; color: #00ffcc;">USER: NOHLA</p>
-        </div>
-        <div class="bio-main">
-          <h2 style="text-shadow: 0 0 10px #00ffcc;">Me?!</h2>
-          <p>Hi again, it's me, Nohla!</p>
-          <div class="box-header">What I'm Playing</div>
-          <p>I'm really into rhythm games like <strong>Maimai</strong> and <strong>Project Diva</strong>.</p>
-          <div class="box-header">Tech Interests</div>
-          <p>I love tinkering with <strong>EndeavourOS</strong> and learning the ropes of cybersecurity.</p>
-        </div>
       </div>
-    </div>
   </div>
 
   <script>
