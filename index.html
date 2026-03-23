@@ -127,3 +127,265 @@
   </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>My IT Portfolio</title>
+  <link rel="icon" type="image/gif" href="rainbowtoro.gif">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    html { overflow-y: scroll; }
+    body {
+      background-color: #000000;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 150px 150px 150px 150px;
+    }
+
+    /* Fixed Containers */
+    .corner-info, .stamp-sidebar, .stamp-row { position: fixed; z-index: 100; }
+    .corner-info { top: 20px; left: 20px; text-align: center; }
+    .corner-info img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; display: block; margin: 0 auto 5px; }
+    .corner-info span { font-size: 12px; font-weight: bold; }
+
+    /* Button Style */
+    .bio-button {
+      display: inline-block;
+      margin: 10px 0 20px 0;
+      background: transparent;
+      color: #00ffcc;
+      border: 1px solid #00ffcc;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 14px;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-shadow: 0 0 5px #00ffcc;
+    }
+    .bio-button:hover { background: #00ffcc; color: black; box-shadow: 0 0 15px #00ffcc; }
+
+    /* Overlay */
+    .bio-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.95); display: none;
+      justify-content: center; align-items: center; z-index: 2000;
+    }
+
+    /* WINDOW */
+    .bio-container {
+      width: 90%;
+      max-width: 700px;
+      max-height: 80vh;
+      overflow-y: auto;
+
+      background: #050505;
+      border: 2px solid #00ffcc;
+      box-shadow: 0 0 25px #00ffcc;
+
+      position: absolute;
+      animation: glowIn 0.3s ease;
+    }
+
+    /* FAKE TITLE BAR */
+    .title-bar {
+      background: #00ffcc;
+      color: black;
+      padding: 8px;
+      font-size: 14px;
+      cursor: move;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .window-buttons {
+      display: flex;
+      gap: 5px;
+    }
+
+    .window-buttons span {
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      background: black;
+    }
+
+    /* CONTENT */
+    .bio-content {
+      padding: 25px;
+      text-align: center;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: red;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .bio-container h1 {
+      font-size: 40px;
+      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    }
+
+    .bio-container h2 {
+      margin-top: 25px;
+      font-size: 24px;
+    }
+
+    .bio-container p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .bio-container ul {
+      margin-top: 10px;
+      text-align: left;
+      display: inline-block;
+    }
+
+    @keyframes glowIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Layout */
+    .top-bar { top: 10px; left: 130px; right: 20px; display: flex; justify-content: center; gap: 10px; }
+    .bottom-bar { bottom: 10px; left: 130px; right: 20px; display: flex; justify-content: center; gap: 10px; }
+    .stamp-sidebar { top: 120px; bottom: 120px; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; scrollbar-width: none; }
+    .left-side { left: 15px; }
+    .right-side { right: 15px; }
+
+    img { width: 80px; height: auto; border: 1px solid white; transition: 0.2s; }
+    img:hover { transform: scale(1.1); }
+
+    h1 { font-size: 50px; text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; }
+    ul { list-style-position: inside; display: inline-block; text-align: left; }
+  </style>
+
+</head>
+
+<body>
+  <div class="corner-info">
+    <img src="https://github.com/squeakymiku.png">
+    <span>Nohla ᗜˬᗜ</span>
+  </div>
+
+  <div class="stamp-row top-bar">
+    <img src="nutella.gif"><img src="soda.gif"><img src="mikuMesmer.gif">
+    <img src="tetoMesmer.gif"><img src="tumblr_eb6ec57e857ed6246cd07622d56eafd6_948c2d7d_100.webp">
+    <img src="tumblr_fe22e855c1b0a9a6b1ee09b56481668e_40134304_250.webp"><img src="bunny8.png">
+  </div>
+
+  <div class="stamp-sidebar left-side">
+    <img src="a50.gif"><img src="a7.gif"><img src="bunny6.gif">
+    <img src="cookierundance.gif"><img src="d5.jpg"><img src="e86.png">
+    <img src="igotaleek.gif">
+  </div>
+
+  <div class="stamp-sidebar right-side">
+    <img src="meanPeople.jpg"><img src="mikustamp.png"><img src="nutella.gif">
+    <img src="pcuser.webp"><img src="tumblr_0060da4b4fbedbd687338919a14954a5_34324805_100.webp">
+    <img src="tumblr_34c2170f55083192156a27940f3c4cac_b2d44bf6_100.png">
+    <img src="tumblr_7b82c4b656ad3e3093ab0aa161f69315_8eb4f7ea_100.png">
+  </div>
+
+  <div class="stamp-row bottom-bar">
+    <img src="pcuser.webp"><img src="mikustamp.png"><img src="brat.png">
+    <img src="a7.gif"><img src="tumblr_4b02e5236e78e001d72a3175b5027934_d76773e6_100.gif">
+    <img src="djw6trw-58d8a3b2-7cbf-47b0-8f7a-1e6ef20ff9ab.png"><img src="k18.gif">
+  </div>
+
+  <h1>Welcome to My Website</h1>
+  <button class="bio-button" onclick="toggleBio()">ABOUT ME</button>
+  <p>Hi! I'm a high school student interested in IT, networking, and cybersecurity.</p>
+  <h2>My Goals</h2>
+  <p>I plan to study Information Technology in college.</p>
+  <h2>Things I'm Learning</h2>
+  <ul>
+    <li>Windows troubleshooting</li>
+    <li>Linux basics</li>
+    <li>Networking fundamentals</li>
+    <li>Cybersecurity concepts</li>
+  </ul>
+
+  <!-- WINDOW POPUP -->
+
+  <div id="myBio" class="bio-overlay">
+    <div class="bio-container" id="dragBox">
+
+```
+  <div class="title-bar" id="dragHandle">
+    <span>about_me.exe</span>
+    <div class="window-buttons">
+      <span></span><span></span><span></span>
+    </div>
+    <button class="close-btn" onclick="toggleBio()">X</button>
+  </div>
+
+  <div class="bio-content">
+    <h1>About Me</h1>
+
+    <p>
+      Hey! I'm a high school student passionate about IT, networking, and cybersecurity.
+      I love learning how computers work and building cool projects like this website.
+    </p>
+
+    <h2>My Goals</h2>
+    <p>
+      I plan to study Information Technology in college and eventually work in cybersecurity or networking.
+    </p>
+
+    <h2>Things I'm Learning</h2>
+    <ul>
+      <li>Windows troubleshooting</li>
+      <li>Linux basics</li>
+      <li>Networking fundamentals</li>
+      <li>Cybersecurity concepts</li>
+    </ul>
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <script>
+    function toggleBio() {
+      var x = document.getElementById("myBio");
+      x.style.display = (x.style.display === "flex") ? "none" : "flex";
+    }
+
+    // DRAGGING (only from title bar)
+    const box = document.getElementById("dragBox");
+    const handle = document.getElementById("dragHandle");
+
+    let offsetX = 0, offsetY = 0, isDragging = false;
+
+    handle.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      offsetX = e.clientX - box.offsetLeft;
+      offsetY = e.clientY - box.offsetTop;
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (isDragging) {
+        box.style.left = (e.clientX - offsetX) + "px";
+        box.style.top = (e.clientY - offsetY) + "px";
+      }
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+    });
+  </script>
+
+</body>
+</html>
+
